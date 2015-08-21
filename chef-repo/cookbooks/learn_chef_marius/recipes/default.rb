@@ -47,3 +47,10 @@ ruby_block "test search and replace on a line" do
     fe.write_file
   end
 end
+
+if node['wibble_test'] == 'true'
+   log 'message' do
+      message 'Got parameter wibble_test'
+      level :info
+   end
+end
