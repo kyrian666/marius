@@ -12,6 +12,6 @@ service 'ssh' do
    action [:enable, :start]
 end
 
-file '/home/keving/test.txt' do
+template '/home/keving/test.txt' do
    source 'index.txt.erb'
 end
