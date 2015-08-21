@@ -16,7 +16,7 @@ service 'ssh' do
    action [:enable, :start]
 end
 
-user 'a keving user' do
+user 'keving' do
   comment 'A keving user'
   uid '1000'
   gid '1000'
