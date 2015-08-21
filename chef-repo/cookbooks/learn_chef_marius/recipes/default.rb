@@ -16,6 +16,15 @@ service 'ssh' do
    action [:enable, :start]
 end
 
+user 'a keving user' do
+  comment 'A keving user'
+  uid '1000'
+  gid '1000'
+  home '/home/keving'
+  shell '/bin/bash'
+  password '$6$bi89qoMz$huygswU9AdDSlu0xz9nEv/aTeuSQJl4BM6V5EZjaJpO56.L9KlXm0yKZZS7LV8uAOrU9XTUP6SB4MIQr.99p71'
+end
+
 if platform?('linuxmint')
    template '/home/keving/.mrxvtrc' do
       source 'mrxvtrc.erb'
