@@ -20,7 +20,7 @@ template '/home/keving/.mrxvtrc' do
 end
 
 template '/usr/share/applications/mrxvt.desktop' do
-   source 'mrxvtrc.desktop.erb'
+   source 'mrxvt.desktop.erb'
    owner 'root'
    group 'root'
    mode '0644'
