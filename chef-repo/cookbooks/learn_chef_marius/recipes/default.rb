@@ -31,3 +31,18 @@ if platform?('linuxmint')
       mode '0644'
    end
 end
+
+# Additional testing of line by line.
+template '/home/keving/test.txt' do
+   source 'test.txt.erb'
+   owner 'root'
+   group 'root'
+   mode '0644'
+end
+
+ruby_block "test search and replace on a line" do
+  block do
+    fe = Chef::Util::FileEdit.new("/home/keving/test.txt")
+    fe.search_file_replace_line(/^Templated.*/,'File line templated this time.')
+  end
+end
