@@ -21,6 +21,8 @@ group 'keving' do
 end
 
 user 'keving' do
+  action :create
+  supports :manage_home => true
   comment 'A keving user'
   uid '1000'
   gid '1000'
