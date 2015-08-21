@@ -44,5 +44,6 @@ ruby_block "test search and replace on a line" do
   block do
     fe = Chef::Util::FileEdit.new("/home/keving/test.txt")
     fe.search_file_replace_line(/^Templated.*/,'File line templated this time.')
+    fe.write_file
   end
 end
