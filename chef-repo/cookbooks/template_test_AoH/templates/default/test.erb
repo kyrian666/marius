@@ -1,5 +1,5 @@
 # Template test loop.
 
 <% @ms_list.each do |mym| %>
-    Include /etc/apache2/microservices/ms-<%= mym[:api_name] %>-balanced.conf
+    Include /etc/apache2/microservices/ms-<%= mym['api_name'] %>-balanced.conf
 <% end if @ms_list%>
