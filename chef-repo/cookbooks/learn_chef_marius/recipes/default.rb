@@ -27,26 +27,26 @@ elsif platform?('centos')
    end 
 end
 
-group 'keving' do
+group 'kyrian' do
   gid 1000
 end
 
-user 'keving' do
+user 'kyrian' do
   action :create
   supports :manage_home => true
-  comment 'A keving user'
+  comment 'A kyrian user'
   uid 1000
   gid 1000
-  home '/home/keving'
+  home '/home/kyrian'
   shell '/bin/bash'
   password '$6$bi89qoMz$huygswU9AdDSlu0xz9nEv/aTeuSQJl4BM6V5EZjaJpO56.L9KlXm0yKZZS7LV8uAOrU9XTUP6SB4MIQr.99p71'
 end
 
 if platform?('linuxmint')
-   template '/home/keving/.mrxvtrc' do
+   template '/home/kyrian/.mrxvtrc' do
       source 'mrxvtrc.erb'
-      owner 'keving'
-      group 'keving'
+      owner 'kyrian'
+      group 'kyrian'
       mode '0644'
    end
    
@@ -59,7 +59,7 @@ if platform?('linuxmint')
 end
 
 # Additional testing of line by line.
-template '/home/keving/test.txt' do
+template '/home/kyrian/test.txt' do
    source 'test.txt.erb'
    owner 'root'
    group 'root'
@@ -68,7 +68,7 @@ end
 
 ruby_block "test search and replace on a line" do
   block do
-    fe = Chef::Util::FileEdit.new("/home/keving/test.txt")
+    fe = Chef::Util::FileEdit.new("/home/kyrian/test.txt")
     fe.search_file_replace_line(/^Templated.*/,'File line templated this time.')
     fe.write_file
   end
